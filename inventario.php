@@ -10,7 +10,14 @@
 <body>
 	<main>
 		<table>
-			
+			<tr>
+			<th>Nome</th>
+			<th>Preço</th>
+			<th>Categoria</th>
+			<th>Estoque</th>
+			<th>Investimento</th>
+			</tr> 
+		
 		</table>
 	</main>
 </body>

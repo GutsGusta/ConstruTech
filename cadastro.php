@@ -25,8 +25,12 @@
 			<input type="number" id="estoque" name="estoque" maxlength="20" min="0"><br>
 			<label for="categoria"> Categoria </label>
 			<br>
-			<input type="text" id="categoria" name="categoria" maxlength="200"><br><br>
-			<button type="submit"> Enviar </button>				
+			<select name=categoria id=categoria>
+				<option value="bruto">Bruto</option>
+				<option value="ferramenta">Ferramenta</option>
+				<option value="acabamento">Acabamento</option>	
+			</select><br><br>
+			<button type="submit">Enviar</button>				
 		</form>
 	</main> 
 </body>
