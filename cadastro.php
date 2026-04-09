@@ -28,5 +28,5 @@
 			<input type="text" id="categoria" name="categoria">
 			<button type="submit"> Enviar </button>				
 		</form>
-	</main>
+	</main> 
 </body>
