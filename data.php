@@ -9,11 +9,12 @@ $categorias = [
 $produtos_base = [
     [
         'id' => 1,
-        'nome' => 'Cimento',
+        'nome' => 'Cimento - 50kg',
         'categoria' => 'Bruto',
         'preco' => 'R$35,00',
         'estoque' => 30,
-        'investimento' => 600
+        'investimento' => 600,
+        'imagem' => 'imagens/'
     ],
     [
         'id' => 2,
@@ -21,7 +22,8 @@ $produtos_base = [
         'categoria' => 'Bruto',
         'preco' => 'R$35,00',
         'estoque' => 30,
-        'investimento' => 600
+        'investimento' => 600,
+        'imagem'
     ],
     [
         'id' => 3,
@@ -29,7 +31,8 @@ $produtos_base = [
         'categoria' => 'Bruto',
         'preco' => 'R$35,00',
         'estoque' => 30,
-        'investimento' => 600
+        'investimento' => 600,
+        'imagem'
     ],
     [
         'id' => 4,
@@ -37,7 +40,8 @@ $produtos_base = [
         'categoria' => 'Bruto',
         'preco' => 'R$35,00',
         'estoque' => 30,
-        'investimento' => 600
+        'investimento' => 600,
+        'imagem'
     ],
     [
         'id' => 5,
@@ -45,7 +49,8 @@ $produtos_base = [
         'categoria' => 'Bruto',
         'preco' => 'R$35,00',
         'estoque' => 30,
-        'investimento' => 600
+        'investimento' => 600,
+        'imagem'
     ],
     [
         'id' => 6,
@@ -53,7 +58,8 @@ $produtos_base = [
         'categoria' => 'Bruto',
         'preco' => 'R$35,00',
         'estoque' => 30,
-        'investimento' => 600
+        'investimento' => 600,
+        'imagem'
     ],
     [
         'id' => 7,
@@ -61,7 +67,8 @@ $produtos_base = [
         'categoria' => 'Bruto',
         'preco' => 'R$35,00',
         'estoque' => 30,
-        'investimento' => 600
+        'investimento' => 600,
+        'imagem'
     ],
     [
         'id' => 8,
@@ -69,7 +76,8 @@ $produtos_base = [
         'categoria' => 'Bruto',
         'preco' => 'R$35,00',
         'estoque' => 30,
-        'investimento' => 600
+        'investimento' => 600,
+        'imagem'
     ]
 ];
 ?>
