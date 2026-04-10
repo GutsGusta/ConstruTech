@@ -1,3 +1,8 @@
+<?php
+    require_once 'init.php';
+
+    $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,24 +13,30 @@
     <title>ConstruTech</title>
 </head>
 <body>
-    <header class="cabecalho">
-        <img src="imagens/Logo.png">
-        <nav>
-            <span><a href="index.html" class="botaoCabecalho">Produtos</a></span>
-            <span><a href="cadastro.php" class="botaoCabecalho">Cadastro de Produtos</a></span>
-            <span><a href="#" class="botaoCabecalho">Inventário</a></span>
-        </nav>
-    </header>
+    <?php
+        require_once 'partials/header.php';
+    ?>
 
     <main>
+
         <div class="filtro-categorias">
-            <a class="botao-categoria">Todos</a>
-            <a class="botao-categoria">Bruto</a>
-            <a class="botao-categoria">Ferramentas</a>
-            <a class="botao-categoria">Acabamento</a>
+            <a href="index.php" class="botao-categoria">Todos</a>
+            <?php
+                foreach($categoria as $kcat => $nome){
+                    echo '<a  href="index.php?categoria='. $kcat .'" class="botao-categoria">'. $nome .'</a>';
+                }
+            ?>
         </div>
 
         <div class="produtos-main">
+            <?php
+                foreach($_SESSION['produto'] as $produtos){
+                    if ($categoria_get === '' || $produto['categoria']===$categoria_get){
+
+                    }
+                }
+            
+            ?>
             <div class="produtos">
                 <article class="card">
                     <img src="imagens/Cimento50kg.svg">
