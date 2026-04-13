@@ -26,12 +26,12 @@
 	<meta charset="UTF-8">	
 	<link rel="stylesheet" href= "style/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>ConstruTech</title>
+	<title>Cadastro de Produtos - ConstruTech</title>
 </head>
 <body>
-	<header>
-
-	</header>
+	<?php
+		require_once 'partials/header.php';
+	?>
 	<main>
 		<form action="partials/cadastro_produtos.php" method="POST">
 			<h1>Cadastro de produto</h1>
