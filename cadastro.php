@@ -1,13 +1,12 @@
 <?php
 require_once 'init.php';
-// require_once 'data.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-		$nome = htmlspecialchars($_POST['nome']);
-		$preco = htmlspecialchars($_POST['preco']);
-		$investimento = htmlspecialchars($_POST['investimento']);
-		$estoque = htmlspecialchars($_POST['estoque']);
-		$categoria = htmlspecialchars($_POST['categoria']);
+		$nome = htmlspecialchars(trim($_POST['nome']));
+		$preco = htmlspecialchars(trim($_POST['preco']));
+		$investimento = htmlspecialchars(trim($_POST['investimento']));
+		$estoque = htmlspecialchars(trim($_POST['estoque']));
+		$categoria = htmlspecialchars(trim($_POST['categoria']));
 
 		$ids = array_column ($_SESSION['produtos'], 'id');
 		$newId = $ids ? max($ids) + 1 : 1;
@@ -21,7 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			];		
 		header('Location: index.php?produtoadd=1');
 		exit();
-
 	}
 
 ?>
