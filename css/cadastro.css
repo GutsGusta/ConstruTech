@@ -42,3 +42,61 @@ nav {
     transform: scale(1.1);
 }
 
+.main-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.main-form h1 {
+    font-size: 40px;
+}
+
+.formulario {
+    color: #0097b2;
+    border: solid 2px #0097b2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 20px;
+    padding: 20px;
+    width: 400px;
+}
+
+.formulario input {
+    background: none;
+    border: none;
+    border-bottom: 2px solid #0097b2;
+    font-size: 20px;
+}
+
+.formulario input:focus {
+    outline: none;
+}
+
+.formulario select {
+    border: #0097b2 solid 2px;
+    border-radius: 10px;
+    width: 200px;
+    font-size: 20px;
+}
+
+.botao-enviar {
+    background-color: orangered;
+    color: #f6f6f6;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 200px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.botao-enviar:hover {
+    transform: scale(1.1);
+}
