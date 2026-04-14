@@ -12,14 +12,29 @@
         require_once 'partials/header.php';
     ?>
 	<main>
-		<table>
-			<tr>
-				<th>Nome</th>
-				<th>Preço</th>
-				<th>Categoria</th>
-				<th>Estoque</th>
-				<th>Investimento</th>
-			</tr>
-		</table>
+		<div class="pagina-inventario">
+			<table class="tabela">
+				<tr>
+					<th>Nome</th>
+					<th>Preço</th>
+					<th>Categoria</th>
+					<th>Estoque</th>
+					<th>Investimento</th>
+					<th>Retorno</th>
+				</tr>
+				<tr>
+					<td>oi</td>
+					<td>oi</td>
+					<td>oi</td>
+					<td>oi</td>
+					<td>oi</td>
+					<td>oi</td>
+				</tr>
+			</table>
+
+			<div class="">
+
+			</div>
+		</div>
 	</main>
 </body>

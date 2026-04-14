@@ -41,16 +41,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				
 				<label for="nome">Nome</label>
 				<br>
-				<input type="text" maxlength="200" id="nome" name="nome" required><br>
+				<input type="text" maxlength="200" id="nome" name="nome" class="campo-form" required><br>
 				<label for="preco">Preço</label>
 				<br>
-				<input type="number" maxlength="20" id="preco" name="preco" min="0" required><br>
+				<input type="number" maxlength="20" id="preco" name="preco" min="0" class="campo-form" required><br>
 				<label for="investimento">Investimento</label>
 				<br>
-				<input type="number" maxlength="20" id="investimento" name="investimento" min="0" required><br>
+				<input type="number" maxlength="20" id="investimento" name="investimento" min="0" class="campo-form" required><br>
 				<label for="estoque">Estoque</label>
 				<br>
-				<input type="number" id="estoque" name="estoque" maxlength="20" min="0" required><br>
+				<input type="number" id="estoque" name="estoque" maxlength="20" min="0" class="campo-form" required><br>
 				<label for="imagem">Imagem</label>
 				<br>
 				<input type="file" id="imagem" name="imagem" required><br>

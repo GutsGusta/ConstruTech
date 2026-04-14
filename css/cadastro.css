@@ -65,18 +65,30 @@ nav {
     flex-direction: column;
     font-size: 20px;
     padding: 20px;
-    width: 400px;
+    width: 450px;
 }
 
-.formulario input {
+.campo-form {
     background: none;
     border: none;
-    border-bottom: 2px solid #0097b2;
+    border-bottom: 1px solid #0097b2;
     font-size: 20px;
+    transition: transform 0.3s ease;
+    width: 300px;
 }
 
-.formulario input:focus {
+.campo-form:hover {
+    transform: scale(1.1);
+}
+
+.campo-form:focus {
     outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .formulario select {

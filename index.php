@@ -1,5 +1,6 @@
 <?php
 require_once 'init.php';
+$categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -27,6 +28,7 @@ require_once 'init.php';
             <div class="produtos">
                 <?php
                     foreach($_SESSION['produtos'] as $produtos){
+                         if ($categoria_get === '' || $produtos['categoria']===$categoria_get){
                             echo '<article class="card">
                                     <img src="'.$produtos['imagem'].'">
                                     <div class="linha-card"></div>
@@ -36,6 +38,7 @@ require_once 'init.php';
                                     <p>Estoque: '.$produtos['estoque'].'</p>
                                     </article>';
                         } 
+                    }
 		?>
             </div>
         </div>
