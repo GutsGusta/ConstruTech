@@ -15,13 +15,11 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
     <?php
         require_once 'partials/header.php';
     ?>
-
     <main>
-
         <div class="filtro-categorias">
             <a href="index.php" class="botao-categoria">Todos</a>
             <?php
-                foreach($categoria as $kcat => $nome){
+                foreach($categorias as $kcat => $nome){
                     echo '<a  href="index.php?categoria='. $kcat .'" class="botao-categoria">'. $nome .'</a>';
                 }
             ?>
@@ -30,15 +28,15 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
         <div class="produtos-main">
             <div class="produtos">
                 <?php
-                    foreach($_SESSION['produto'] as $produtos){
-                        if ($categoria_get === '' || $produto['categoria']===$categoria_get){
+                    foreach($_SESSION['produtos'] as $produtos){
+                        if ($categoria_get === '' || $produtos['categoria']===$categoria_get){
                             echo '<article class="card">
-                                    <img src="'.$produto['imagem'].'">
+                                    <img src="'.$produtos['imagem'].'">
                                     <div class="linha-card"></div>
-                                    <h3>'.$produto['nome'].'</h3>
-                                    <h3>'.$produto['categoria'].'</h3>
-                                    <h3>'.$produto['preco'].'</h3>
-                                    <p>'.$produto['estoque'].'</p>
+                                    <h3>'.$produtos['nome'].'</h3>
+                                    <h3>'.$produtos['categoria'].'</h3>
+                                    <h3>R$'.$produtos['preco'].',00</h3>
+                                    <p>Estoque: '.$produtos['estoque'].'</p>
                                     </article>';
                         }
                     }
