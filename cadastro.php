@@ -52,7 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				<br>
 				<input type="number" id="estoque" name="estoque" maxlength="20" min="0" required><br>
 				<label for="categoria">Categoria</label>
+				<label for="imagem">Imagem></label>
 				<br>
+				<input type="image" id="imagem" name="imagem" required><br>	
 				<select name=categoria id=categoria required>
 					<option value="bruto">Bruto</option>
 					<option value="ferramenta">Ferramenta</option>
