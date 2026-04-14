@@ -1,6 +1,6 @@
 <?php
 require_once 'init.php';
-require_once 'data.php';
+// require_once 'data.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$nome = htmlspecialchars($_POST['nome']);
@@ -19,6 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				'estoque' => $_POST['estoque'],
 				'categoria' => $_POST['categoria']
 			];		
+		header('Location: index.php?produtoadd=1');
+		exit();
+
 	}
 
 ?>
@@ -37,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	<main>
 		<div class="main-form">
 			<h1>Cadastro de produto</h1>
-			<form action="index.php" method="POST" class="formulario">
+			<form action="cadastro.php" method="POST" class="formulario">
 				
 				<label for="nome">Nome</label>
 				<br>

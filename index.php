@@ -1,5 +1,9 @@
 <?php
 require_once 'init.php';
+
+if (isset($_GET['produtoadd']) && $_GET['produtoadd']=='1') {
+    print '<h1>Produto adicionado com sucesso!!!</h1>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
