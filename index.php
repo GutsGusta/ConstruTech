@@ -1,6 +1,5 @@
 <?php
 require_once 'init.php';
-$categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,12 +23,10 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
                 }
             ?>
         </div>
-
         <div class="produtos-main">
             <div class="produtos">
                 <?php
                     foreach($_SESSION['produtos'] as $produtos){
-                        if ($categoria_get === '' || $produtos['categoria']===$categoria_get){
                             echo '<article class="card">
                                     <img src="'.$produtos['imagem'].'">
                                     <div class="linha-card"></div>
@@ -38,11 +35,8 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
                                     <h3>R$'.$produtos['preco'].',00</h3>
                                     <p>Estoque: '.$produtos['estoque'].'</p>
                                     </article>';
-                        }
-                    }
-                
-                ?>
-            
+                        } 
+		?>
             </div>
         </div>
     </main>

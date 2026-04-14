@@ -1,11 +1,14 @@
 <?php
-	$nome = htmlspecialchars(($_POST['nome']));
-	$preco = htmlspecialchars($_POST['preco']);
-	$investimento = htmlspecialchars($_POST['investimento']);
-	$estoque = htmlspecialchars($_POST['estoque']);
-	$categoria = htmlspecialchars($_POST['categoria']);
+require_once 'init.php';
+require_once 'data.php';
 
-	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+		$nome = htmlspecialchars($_POST['nome']);
+		$preco = htmlspecialchars($_POST['preco']);
+		$investimento = htmlspecialchars($_POST['investimento']);
+		$estoque = htmlspecialchars($_POST['estoque']);
+		$categoria = htmlspecialchars($_POST['categoria']);
+
 		$ids = array_column ($_SESSION['produtos'], 'id');
 		$newId = $ids ? max($ids) + 1 : 1;
 			$_SESSION['produtos'][] = [
