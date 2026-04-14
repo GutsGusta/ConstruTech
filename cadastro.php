@@ -40,7 +40,6 @@
 			<label for="preco">Preço</label>
 			<br>
 			<input type="number" maxlength="20" id="preco" name="preco" min="0" required><br>
-			<br>
 			<label for="investimento">Investimento</label>
 			<br>
 			<input type="number" maxlength="20" id="investimento" name="investimento" min="0" required><br>
