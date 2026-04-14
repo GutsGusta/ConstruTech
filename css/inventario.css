@@ -41,3 +41,16 @@ nav {
 .botaoCabecalho:hover {
     transform: scale(1.1);
 }
+
+.pagina-inventario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.tabela, th, tr, td {
+    border: solid 2px black;
+    border-collapse: collapse;
+    font-size: 20px;
+}

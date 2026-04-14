@@ -1,9 +1,5 @@
 <?php
 require_once 'init.php';
-
-if (isset($_GET['produtoadd']) && $_GET['produtoadd']=='1') {
-    print '<h1>Produto adicionado com sucesso!!!</h1>';
-}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -31,6 +27,7 @@ if (isset($_GET['produtoadd']) && $_GET['produtoadd']=='1') {
             <div class="produtos">
                 <?php
                     foreach($_SESSION['produtos'] as $produtos){
+                         if ($categoria_get === '' || $produtos['categoria']===$categoria_get){
                             echo '<article class="card">
                                     <img src="'.$produtos['imagem'].'">
                                     <div class="linha-card"></div>
@@ -40,6 +37,7 @@ if (isset($_GET['produtoadd']) && $_GET['produtoadd']=='1') {
                                     <p>Estoque: '.$produtos['estoque'].'</p>
                                     </article>';
                         } 
+                    }
 		?>
             </div>
         </div>
