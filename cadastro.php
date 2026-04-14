@@ -7,6 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$investimento = htmlspecialchars(trim($_POST['investimento']));
 		$estoque = htmlspecialchars(trim($_POST['estoque']));
 		$categoria = htmlspecialchars(trim($_POST['categoria']));
+		$imagem = htmlspecialchars(trim($_POST['imagem']));
 
 		$ids = array_column ($_SESSION['produtos'], 'id');
 		$newId = $ids ? max($ids) + 1 : 1;
