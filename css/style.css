@@ -42,6 +42,12 @@ nav {
     transform: scale(1.1);
 }
 
+.titulo {
+    color: orangered;
+    text-align: center;
+    padding: 30px;
+}
+
 .filtro-categorias {
     display: flex;
     align-items: center;

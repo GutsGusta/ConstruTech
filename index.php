@@ -16,6 +16,8 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
         require_once 'partials/header.php';
     ?>
     <main>
+
+        <h1 class="titulo">Produtos da Loja</h1>
         <div class="filtro-categorias">
             <a href="index.php" class="botao-categoria">Todos</a>
             <?php
