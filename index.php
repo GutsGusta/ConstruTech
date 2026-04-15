@@ -47,7 +47,7 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
                                     <div class="linha-card"></div>
                                     <h3>'.$produtos['nome'].'</h3>
                                     <h3>'.$produtos['categoria'].'</h3>
-                                    <h3>R$'.$produtos['preco'].',00</h3>
+                                    <h3>R$'.$produtos['preco'].'</h3>
                                     <p>Estoque: '.$produtos['estoque'].'</p>
                                     </article>';
                             }
