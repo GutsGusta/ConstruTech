@@ -26,29 +26,17 @@ require_once 'init.php'
 					<th>Investimento</th>
 					<th>Retorno</th>
 				</tr>
-				<?php
+<?php
+	$retorno = array_column($_SESSION['produtos'], 'preço') * array_column($_SESSION['produtos'], 'estoque') - array_column($_SESSION['produtos'], 'investimento'];
 				foreach($_SESSION['produtos'] as $produto){
 					echo '<td>'.$produto['nome'].'</td>
 						<td>'.$produto['preço'].'</td>
-						<td
-		
-	
-
-				}
-
-
-
-
+						<td>'.$produto['categoria'].'</td>
+						<td>'.$produto['estoque'].'</td>
+						<td>'.$produto['investimento'].'</td>
+						<td>'.$retorno.'</td>'
+				};
 				?>
-				<tr>
-					<td>Colher de Pedreiro</td>
-					<td>R$35,00</td>
-					<td>Ferramenta</td>
-					<td>30</td>
-					<td>2000,00</td>
-					<td>3500,00</td>
-				</tr>
-
 			<article class="">	
 		</article>
 		</div>
