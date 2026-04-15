@@ -46,8 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				<input type="text" maxlength="20" id="investimento" name="investimento" min="0" class="campo-form" required>
 				<label for="estoque">Estoque</label>
 				<input type="text" id="estoque" name="estoque" maxlength="20" min="0" class="campo-form" required>
-				<label for="imagem">Imagem</label>
-				<input type="twxt" id="imagem" name="imagem" required>
+				<label for="imagem">Imagem (Link)</label>
+				<input type="twxt" id="imagem" name="imagem" class="campo-form" required>
 				<label for="categoria">Categoria</label>	
 				<select name=categoria id=categoria required>
 					<option value="bruto">Bruto</option>
