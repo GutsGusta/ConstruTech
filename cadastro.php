@@ -16,7 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				'preco' => $_POST['preco'],
 				'investimento' => $_POST['investimento'],
 				'estoque' => $_POST['estoque'],
-				'categoria' => $_POST['categoria']
+				'categoria' => $_POST['categoria'],
+				'imagem' => $_POST['imagem']
 			];		
 		header('Location: index.php?produtoadd=1');
 		exit();
@@ -40,14 +41,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			<form action="cadastro.php" method="POST" class="formulario">
 				<label for="nome">Nome</label>
 				<input type="text" maxlength="200" id="nome" name="nome" class="campo-form" required>
-				<label for="preco">Preço</label>
-				<input type="text" maxlength="20" id="preco" name="preco" min="0" class="campo-form" required>
-				<label for="investimento">Investimento</label>
-				<input type="text" maxlength="20" id="investimento" name="investimento" min="0" class="campo-form" required>
-				<label for="estoque">Estoque</label>
-				<input type="text" id="estoque" name="estoque" maxlength="20" min="0" class="campo-form" required>
+				<label for="preco">Preço(R$)</label>
+				<input type="text" maxlength="20" id="preco" name="preco" class="campo-form" required>
+				<label for="investimento">Investimento(R$)</label>
+				<input type="text" maxlength="20" id="investimento" name="investimento" class="campo-form" required>
+				<label for="estoque">Estoque (Quantidade)</label>
+				<input type="text" id="estoque" name="estoque" maxlength="20" class="campo-form" required>
 				<label for="imagem">Imagem (Link)</label>
-				<input type="twxt" id="imagem" name="imagem" class="campo-form" required>
+				<input type="text" id="imagem" name="imagem" class="campo-form" required>
 				<label for="categoria">Categoria</label>	
 				<select name=categoria id=categoria required>
 					<option value="bruto">Bruto</option>
