@@ -1,3 +1,7 @@
+<?php
+require_once 'init.php'
+?>
+	
 <!DOCTYPE HTML>
 <html lang="pt-br">
 <head>
@@ -22,6 +26,20 @@
 					<th>Investimento</th>
 					<th>Retorno</th>
 				</tr>
+				<?php
+				foreach($_SESSION['produtos'] as $produto){
+					echo '<td>'.$produto['nome'].'</td>
+						<td>'.$produto['preço'].'</td>
+						<td
+		
+	
+
+				}
+
+
+
+
+				?>
 				<tr>
 					<td>Colher de Pedreiro</td>
 					<td>R$35,00</td>
@@ -30,7 +48,6 @@
 					<td>2000,00</td>
 					<td>3500,00</td>
 				</tr>
-			</table>
 
 			<article class="">
 

@@ -1,13 +1,13 @@
 <?php
 require_once 'init.php';
-require_once 'data.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-		$nome = htmlspecialchars($_POST['nome']);
-		$preco = htmlspecialchars($_POST['preco']);
-		$investimento = htmlspecialchars($_POST['investimento']);
-		$estoque = htmlspecialchars($_POST['estoque']);
-		$categoria = htmlspecialchars($_POST['categoria']);
+		$nome = htmlspecialchars(trim($_POST['nome']));
+		$preco = htmlspecialchars(trim($_POST['preco']));
+		$investimento = htmlspecialchars(trim($_POST['investimento']));
+		$estoque = htmlspecialchars(trim($_POST['estoque']));
+		$categoria = htmlspecialchars(trim($_POST['categoria']));
+		$imagem = htmlspecialchars(trim($_POST['imagem']));
 
 		$ids = array_column ($_SESSION['produtos'], 'id');
 		$newId = $ids ? max($ids) + 1 : 1;
@@ -19,6 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				'estoque' => $_POST['estoque'],
 				'categoria' => $_POST['categoria']
 			];		
+		header('Location: index.php?produtoadd=1');
+		exit();
 	}
 
 ?>
@@ -37,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	<main>
 		<div class="main-form">
 			<h1>Cadastro de produto</h1>
-			<form action="index.php" method="POST" class="formulario">
+			<form action="cadastro.php" method="POST" class="formulario">
 				
 				<label for="nome">Nome</label>
 				<br>
