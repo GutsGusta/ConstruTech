@@ -1,6 +1,5 @@
 <?php
 require_once 'init.php';
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$nome = htmlspecialchars(trim($_POST['nome']));
 		$preco = htmlspecialchars(trim($_POST['preco']));
@@ -22,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		header('Location: index.php?produtoadd=1');
 		exit();
 	}
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -40,28 +38,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		<div class="main-form">
 			<h1>Cadastro de produto</h1>
 			<form action="cadastro.php" method="POST" class="formulario">
-				
 				<label for="nome">Nome</label>
-				<br>
-				<input type="text" maxlength="200" id="nome" name="nome" class="campo-form" required><br>
+				<input type="text" maxlength="200" id="nome" name="nome" class="campo-form" required>
 				<label for="preco">Preço</label>
-				<br>
-				<input type="number" maxlength="20" id="preco" name="preco" min="0" class="campo-form" required><br>
+				<input type="text" maxlength="20" id="preco" name="preco" min="0" class="campo-form" required>
 				<label for="investimento">Investimento</label>
-				<br>
-				<input type="number" maxlength="20" id="investimento" name="investimento" min="0" class="campo-form" required><br>
+				<input type="text" maxlength="20" id="investimento" name="investimento" min="0" class="campo-form" required>
 				<label for="estoque">Estoque</label>
-				<br>
-				<input type="number" id="estoque" name="estoque" maxlength="20" min="0" class="campo-form" required><br>
+				<input type="text" id="estoque" name="estoque" maxlength="20" min="0" class="campo-form" required>
 				<label for="imagem">Imagem</label>
-				<br>
-				<input type="file" id="imagem" name="imagem" required><br>
+				<input type="twxt" id="imagem" name="imagem" required>
 				<label for="categoria">Categoria</label>	
 				<select name=categoria id=categoria required>
 					<option value="bruto">Bruto</option>
 					<option value="ferramenta">Ferramenta</option>
 					<option value="acabamento">Acabamento</option>	
-				</select><br><br>
+				</select>
 				<button type="submit" class="botao-enviar">Enviar</button>				
 			</form>
 		</div>
