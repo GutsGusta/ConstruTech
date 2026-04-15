@@ -47,8 +47,14 @@ require_once 'init.php'
 				<p>Lucro Total <?php print $total; ?></p>
 			</div>
 			<article class="">	
-				
-		</article>
+				<?php
+					foreach($_SESSION['produtos'] as $produto){
+						if ($produto['estoque'] === '0'){
+							print '<p> Produto fora de estoque! </p>';
+						}
+					}
+				?>
+			</article>
 		</div>
 	</main>
 </body>
