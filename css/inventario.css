@@ -47,10 +47,16 @@ nav {
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    padding: 50px;
 }
 
 .tabela, th, tr, td {
-    border: solid 2px black;
+    border: solid 1px black;
     border-collapse: collapse;
     font-size: 20px;
+    text-align: center;
+}
+
+.tabela {
+    border-radius: 10px;
 }

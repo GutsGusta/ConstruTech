@@ -23,18 +23,84 @@
 					<th>Retorno</th>
 				</tr>
 				<tr>
-					<td>oi</td>
-					<td>oi</td>
-					<td>oi</td>
-					<td>oi</td>
-					<td>oi</td>
-					<td>oi</td>
+					<td>Colher de Pedreiro</td>
+					<td>R$35,00</td>
+					<td>Ferramenta</td>
+					<td>30</td>
+					<td>2000,00</td>
+					<td>3500,00</td>
 				</tr>
 			</table>
 
-			<div class="">
+			<article class="">
 
-			</div>
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</article>
 		</div>
 	</main>
 </body>

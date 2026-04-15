@@ -23,13 +23,13 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
                     echo '<a  href="index.php?categoria='. $kcat .'" class="botao-categoria">'. $nome .'</a>';
                 }
             ?>
-        </div>
+        </div> 
         <div class="produtos-main">
             <div class="produtos">
                 <?php
                     foreach($_SESSION['produtos'] as $produtos){
                          if ($categoria_get === '' || $produtos['categoria']===$categoria_get){
-                            echo '<article class="card">
+                            print '<article class="card">
                                     <img src="'.$produtos['imagem'].'">
                                     <div class="linha-card"></div>
                                     <h3>'.$produtos['nome'].'</h3>
