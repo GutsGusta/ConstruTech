@@ -16,7 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				'preco' => $_POST['preco'],
 				'investimento' => $_POST['investimento'],
 				'estoque' => $_POST['estoque'],
-				'categoria' => $_POST['categoria']
+				'categoria' => $_POST['categoria'],
+				'imagem' => $_POST['imagem']
 			];		
 		header('Location: index.php?produtoadd=1');
 		exit();
@@ -47,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				<label for="estoque">Estoque (Quantidade)</label>
 				<input type="text" id="estoque" name="estoque" maxlength="20" class="campo-form" required>
 				<label for="imagem">Imagem (Link)</label>
-				<input type="twxt" id="imagem" name="imagem" class="campo-form" required>
+				<input type="text" id="imagem" name="imagem" class="campo-form" required>
 				<label for="categoria">Categoria</label>	
 				<select name=categoria id=categoria required>
 					<option value="bruto">Bruto</option>

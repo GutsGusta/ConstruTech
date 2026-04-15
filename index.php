@@ -1,6 +1,7 @@
 <?php
 require_once 'init.php';
 $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
+// print_r($_SESSION['produtos']);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
