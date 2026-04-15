@@ -38,7 +38,7 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
                                     <h3>'.$produtos['nome'].'</h3>
                                     <h3>'.$produtos['categoria'].'</h3>
                                     <h3>R$'.$produtos['preco'].'</h3>
-                                    <p class="fora-estoque">Estoque: Produto fora do estoque</p>
+                                    <p class="fora-estoque">Produto fora do estoque</p>
                                     </article>';
                             }
                             else {

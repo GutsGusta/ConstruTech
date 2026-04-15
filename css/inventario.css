@@ -50,6 +50,17 @@ nav {
     padding: 50px;
 }
 
+.tabela-total {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+}
+
+.tabela-total p {
+    text-align: end;
+}
+
 .tabela, th, tr, td {
     border: solid 1px black;
     border-collapse: collapse;
@@ -59,4 +70,8 @@ nav {
 
 .tabela {
     border-radius: 10px;
+}
+
+.th {
+    background-color: orange;
 }

@@ -10,7 +10,7 @@ $produtos_base = [
     [
         'id' => 1,
         'nome' => 'Cimento - 50kg',
-        'categoria' => 'bruto',
+        'categoria' => 'Bruto',
         'preco' => 35,
         'estoque' => 30,
         'investimento' => 2000.00,
@@ -20,7 +20,7 @@ $produtos_base = [
     [
         'id' => 2,
         'nome' => 'Colher de Pedreiro',
-        'categoria' => 'ferramenta',
+        'categoria' => 'Ferramenta',
         'preco' => 26.00,
         'estoque' => 40,
         'investimento' => 1000.00,
@@ -30,7 +30,7 @@ $produtos_base = [
     [
         'id' => 3,
         'nome' => 'Porcelanato Ortiz Cinza Acetinado Retificado 120x120cm',
-        'categoria' => 'acabamento',
+        'categoria' => 'Acabamento',
         'preco' => 42.00,
         'estoque' => 60,
         'investimento' => 2000.00,
@@ -40,7 +40,7 @@ $produtos_base = [
     [
         'id' => 4,
         'nome' => 'Argamassa 20kg',
-        'categoria' => 'bruto',
+        'categoria' => 'Bruto',
         'preco' => 25.00,
         'estoque' => 67,
         'investimento' => 800.00,
@@ -50,7 +50,7 @@ $produtos_base = [
     [
         'id' => 5,
         'nome' => 'Parafusadeira e Furadeira - Makita',
-        'categoria' => 'ferramenta',
+        'categoria' => 'Ferramenta',
         'preco' => 550.00,
         'estoque' => 16,
         'investimento' => 25000.00,
@@ -60,7 +60,7 @@ $produtos_base = [
     [
         'id' => 6,
         'nome' => 'Nível a Laser Bosch',
-        'categoria' => 'ferramenta',
+        'categoria' => 'Ferramenta',
         'preco' => 670.00,
         'estoque' => 24,
         'investimento' => 28000.00,
@@ -70,7 +70,7 @@ $produtos_base = [
     [
         'id' => 7,
         'nome' => 'Rodapé Branco 10cm',
-        'categoria' => 'acabamento',
+        'categoria' => 'Acabamento',
         'preco' => 20.00,
         'estoque' => 441,
         'investimento' => 700.00,
@@ -80,7 +80,7 @@ $produtos_base = [
     [
         'id' => 8,
         'nome' => 'Revestimento Ripado 30x90',
-        'categoria' => 'acabamento',
+        'categoria' => 'Acabamento',
         'preco' => 135.00,
         'estoque' => 777,
         'investimento' => 8000.00,
