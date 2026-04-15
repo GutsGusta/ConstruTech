@@ -29,7 +29,18 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
                 <?php
                     foreach($_SESSION['produtos'] as $produtos){
                          if ($categoria_get === '' || $produtos['categoria']===$categoria_get){
-                            print '<article class="card">
+                            if ($produtos['estoque'] == 0) {
+                                print '<article class="card">
+                                    <img src="'.$produtos['imagem'].'">
+                                    <div class="linha-card"></div>
+                                    <h3>'.$produtos['nome'].'</h3>
+                                    <h3>'.$produtos['categoria'].'</h3>
+                                    <h3>R$'.$produtos['preco'].'</h3>
+                                    <p class="fora-estoque">Estoque: Produto fora do estoque</p>
+                                    </article>';
+                            }
+                            else {
+                                print '<article class="card">
                                     <img src="'.$produtos['imagem'].'">
                                     <div class="linha-card"></div>
                                     <h3>'.$produtos['nome'].'</h3>
@@ -37,9 +48,11 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
                                     <h3>R$'.$produtos['preco'].',00</h3>
                                     <p>Estoque: '.$produtos['estoque'].'</p>
                                     </article>';
+                            }
+
                         } 
                     }
-		?>
+		        ?>
             </div>
         </div>
     </main>
