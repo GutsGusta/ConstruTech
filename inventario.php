@@ -59,5 +59,20 @@ require_once 'init.php'
 	</main>
 	<footer>
 		<!-- Aqui ficará a parte do financeiro -->
+		<div>
+		<h3>Estoque</h3>
+		<p>Estoque de todos os produtos:</p>
+		<!-- <p>Valor dos Produtos</p> -->
+		</div>
+
+		<div>
+		<h3>Investimento <br>(Gasto nos Produtos)</h3>
+		<p></p>
+		</div>
+
+		<div>
+		<h3>Lucro Total</h3>
+		<p></p>
+		</div>
 	</footer>
 </body>
