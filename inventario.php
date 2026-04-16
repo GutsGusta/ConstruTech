@@ -44,7 +44,7 @@ require_once 'init.php'
 						$total +=$totalLinha;
 					}
 					?>
-				<p>Lucro Total <?php print $total; ?></p>
+				<!-- <p>Lucro Total <?php print $total; ?></p> -->
 			</div>
 			<article class="">	
 				<?php
@@ -57,4 +57,7 @@ require_once 'init.php'
 			</article>
 		</div>
 	</main>
+	<footer>
+		<!-- Aqui ficará a parte do financeiro -->
+	</footer>
 </body>
