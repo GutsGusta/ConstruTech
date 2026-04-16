@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
 	<meta charset="UTF-8">	
 	<link rel="stylesheet" href= "css/cadastro.css">
+	<link rel="icon" type="image/x-icon" href="imagens/Logo.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Cadastro de Produtos - ConstruTech</title>
 </head>
@@ -37,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	?>
 	<main>
 		<div class="main-form">
-			<h1>Cadastro de produto</h1>
+			<h1>Cadastro de Produto</h1>
 			<form action="cadastro.php" method="POST" class="formulario">
 				<label for="nome">Nome</label>
 				<input type="text" maxlength="200" id="nome" name="nome" class="campo-form" required>
