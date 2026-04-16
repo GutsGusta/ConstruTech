@@ -1,3 +1,6 @@
+<?php
+    require_once 'init.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,6 +11,9 @@
     <title>Login - ConstruTech</title>
 </head>
 <body>
+    <?php
+        require_once 'partials/header.php';
+    ?>
     <main>
         <div class="main-form">
             <form action="index.php" method="post" class="formulario">

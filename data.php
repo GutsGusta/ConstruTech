@@ -91,12 +91,12 @@ $produtos_base = [
 
 $usuarios_base = [
     [
-        'nome' => 'Vicente';
-        'senha' => 'Vicente123';
+        'nomeusuario' => 'Vicente',
+        'senha' => 'Vicente123',
     ],
     [
-        'nome' => 'Funcionario';
-        'senha' => 'Funcionario123';        
+        'nomeusuario' => 'Funcionario',
+        'senha' => 'Funcionario123',        
     ]
 ];
 ?>
