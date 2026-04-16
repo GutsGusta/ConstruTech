@@ -5,9 +5,6 @@ require_once 'data.php';
 		$_SESSION['produtos'] = $produtos_base;
 	} 
 
-	if (!isset ($_SESSION['usuarios'])){
-		$_SESSION['usuarios'] = $usuarios_base;
-	}
 // session_destroy();
 ?>
 

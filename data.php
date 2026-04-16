@@ -88,15 +88,3 @@ $produtos_base = [
         'imagem' => 'imagens/Revestimento.svg'
     ]
 ];
-
-$usuarios_base = [
-    [
-        'nomeusuario' => 'Vicente',
-        'senha' => 'Vicente123',
-    ],
-    [
-        'nomeusuario' => 'Funcionario',
-        'senha' => 'Funcionario123',        
-    ]
-];
-?>
