@@ -30,13 +30,20 @@ require_once 'init.php'
 					</tr>
 				<?php
 					$total = 0;
+					$status_estoque = null;
 						foreach($_SESSION['produtos'] as $produto){
 						$totalLinha = $produto['preco']*$produto['estoque'];
+						if ($_SESSION['estoque'] < 30) {
+						$status_estoque = 'alerta_estoque'
+						}
+						elseif($_SESSION['estoque'] < 10){
+						$status_estoque = 'alerta_severo_estoque'
+						}
 						echo '<tr>	
 								<td>'.$produto['nome'].'</td>
 								<td>R$'.$produto['preco'].'</td>
 								<td>'.$produto['categoria'].'</td>
-								<td>'.$produto['estoque'].'</td>
+								<td class='.$status_estoque.'>'.$produto['estoque'].'</td>
 								<td>R$'.$produto['investimento'].'</td>
 								<td>R$'.$totalLinha.'</td>
 								<td>'.$produto['id'].'</td>
@@ -46,42 +53,14 @@ require_once 'init.php'
 					?>
 				<!-- <p>Lucro Total <?php print $total; ?></p> -->
 			</div>
-			<article class="">	
-<?php
-					echo '<h1> Alertas de estoque </h1>';
-					foreach($_SESSION['produtos'] as $produto){
-							if($produto['estoque'] > 10 && $produto['estoque'] < 30){
-							echo '<p>'.$produto['nome'].' está com estoque abaixo da média!</p>';
-						}
-						elseif($produto['estoque'] < 10){
-							echo '<p>'.$produto['nome'].' está com estoque severamente abaixo da média!</p>';
-						}	
-
-
-						elseif ($produto['estoque'] == '0'){
-						echo '<p>'.$produto['nome'].' fora de estoque! </p>';	
-						}
+							<?php
+					$lucro_total = null;	
+					foreach(array_column($_SESSION['produtos'], 'retorno') as $valor)
+					{
+						$lucro_total += $valor;
 					}
-				?>
-			</article>
-		</div>
-	</main>
-	<footer>
-		<!-- Aqui ficará a parte do financeiro -->
-		<div>
-		<h3>Estoque</h3>
-		<p>Estoque de todos os produtos:</p>
-		<!-- <p>Valor dos Produtos</p> -->
-		</div>
-
-		<div>
-		<h3>Investimento <br>(Gasto nos Produtos)</h3>
-		<p></p>
-		</div>
-
-		<div>
-		<h3>Lucro Total</h3>
-		<p></p>
+						print $lucro_total;
+		?>
 		</div>
 	</footer>
 </body>
