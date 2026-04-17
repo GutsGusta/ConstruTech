@@ -47,10 +47,12 @@ require_once 'init.php'
 				<!-- <p>Lucro Total <?php print $total; ?></p> -->
 			</div>
 			<article class="">	
-				<?php
+<?php
+					echo '<h1> Alertas de estoque </h1>';
 					foreach($_SESSION['produtos'] as $produto){
-						if ($produto['estoque'] === '0'){
-							print '<p> Produto fora de estoque! </p>';
+						if($produto['estoque']) 
+						if ($produto['estoque'] == '0'){
+							echo ''.$produto['nome'].' fora de estoque!';	
 						}
 					}
 				?>
