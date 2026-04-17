@@ -33,11 +33,11 @@ require_once 'init.php'
 					$status_estoque = null;
 						foreach($_SESSION['produtos'] as $produto){
 						$totalLinha = $produto['preco']*$produto['estoque'];
-						if ($_SESSION['estoque'] < 30) {
-						$status_estoque = 'alerta_estoque'
+						if ($produto['estoque'] < 30) {
+						$status_estoque = 'alerta_estoque';
 						}
-						elseif($_SESSION['estoque'] < 10){
-						$status_estoque = 'alerta_severo_estoque'
+						elseif($produto['estoque'] < 10){
+						$status_estoque = 'alerta_severo_estoque';
 						}
 						echo '<tr>	
 								<td>'.$produto['nome'].'</td>
