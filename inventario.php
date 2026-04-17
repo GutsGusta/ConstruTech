@@ -50,9 +50,16 @@ require_once 'init.php'
 <?php
 					echo '<h1> Alertas de estoque </h1>';
 					foreach($_SESSION['produtos'] as $produto){
-						if($produto['estoque']) 
-						if ($produto['estoque'] == '0'){
-							echo ''.$produto['nome'].' fora de estoque!';	
+							if($produto['estoque'] > 10 && $produto['estoque'] < 30){
+							echo '<p>'.$produto['nome'].' está com estoque abaixo da média!</p>';
+						}
+						elseif($produto['estoque'] < 10){
+							echo '<p>'.$produto['nome'].' está com estoque severamente abaixo da média!</p>';
+						}	
+
+
+						elseif ($produto['estoque'] == '0'){
+						echo '<p>'.$produto['nome'].' fora de estoque! </p>';	
 						}
 					}
 				?>
