@@ -19,6 +19,7 @@ require_once 'init.php'
 		<div class="pagina-inventario">
 			<div class="tabela-total">
 				<table class="tabela">
+				<
 					<tr>
 						<th>Nome</th>
 						<th>Preço</th>
@@ -51,16 +52,17 @@ require_once 'init.php'
 						$total +=$totalLinha;
 					}
 					?>
-				<!-- <p>Lucro Total <?php print $total; ?></p> -->
+		<footer>
 			</div>
-							<?php
+			<?php
+					echo '<h1> Lucro total</h1>';
 					$lucro_total = null;	
 					foreach(array_column($_SESSION['produtos'], 'retorno') as $valor)
 					{
 						$lucro_total += $valor;
 					}
 						print $lucro_total;
-		?>
+			?>
 		</div>
 	</footer>
 </body>
