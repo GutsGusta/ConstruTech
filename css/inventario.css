@@ -46,7 +46,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     padding: 50px;
 }
 
@@ -63,6 +63,7 @@ th, tr, td {
     font-size: 20px;
     text-align: center;
     min-width: 150px;
+    height: 50px;
 }
 
 .tabela {
@@ -70,9 +71,79 @@ th, tr, td {
     border-collapse: collapse;
     font-size: 20px;
     text-align: center;
-    border-radius: 10px;
 }
 
 .tabela th {
     background-color: orange;
+}
+
+.alerta_severo_estoque {
+    background-color: salmon;
+    color: red;
+}
+
+.alerta_estoque {
+    background-color: khaki;
+    color: rgb(253, 253, 52);
+}
+
+.botao-acao-mais {
+    background-color: limegreen;
+    border: solid 1px green;
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+}
+
+.botao-acao-menos {
+    background-color: tomato;
+    border: solid 1px red;
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+}
+
+.botao-acao-deletar {
+    text-decoration: none;
+}
+
+footer {
+    background-color: #0097b2;
+    color: #f6f6f6;
+    text-align: center;
+}
+
+.footer-completo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 50px;
+    padding: 30px;
+}
+
+.parte-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.parte-footer h3, .parte-footer-legenda h3 {
+    color: orange;
+}
+
+.parte-footer-legenda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.linha-footer {
+    background-color: orangered;
+    width: 2px;
+    height: 150px;
 }

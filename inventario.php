@@ -1,7 +1,6 @@
 <?php
 require_once 'init.php';
 
-// --- LÓGICA DE AÇÕES (ADICIONAR, REMOVER, DELETAR) ---
 if (isset($_GET['acao']) && isset($_GET['id'])) {
     $acao = $_GET['acao'];
     $id_alvo = $_GET['id'];
@@ -11,24 +10,20 @@ if (isset($_GET['acao']) && isset($_GET['id'])) {
             if ($acao == 'adicionar') {
                 $produto['estoque'] += 1;
             } elseif ($acao == 'remover') {
-                // Garante que o estoque não fique negativo
                 if ($produto['estoque'] > 0) {
                     $produto['estoque'] -= 1;
                 }
             } elseif ($acao == 'deletar') {
-                // Remove o produto do array de sessão
                 unset($_SESSION['produtos'][$indice]);
             }
-            break; // Interrompe o loop pois já achamos e processamos o produto
+            break;
         }
     }
     
-    // Reorganiza os índices do array após deletar
     if ($acao == 'deletar') {
         $_SESSION['produtos'] = array_values($_SESSION['produtos']);
     }
 
-    // Redireciona para a mesma página limpando a URL (evita reenvio ao atualizar a página)
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
@@ -42,23 +37,6 @@ if (isset($_GET['acao']) && isset($_GET['id'])) {
     <link rel="stylesheet" href="css/inventario.css">
     <link rel="icon" type="image/x-icon" href="imagens/Logo.png">
     <title>Inventário - ConstruTech</title>
-    <style>
-        /* Estilos básicos para os botões ficarem apresentáveis */
-        .btn-acao {
-            padding: 2px 8px;
-            margin: 0 2px;
-            cursor: pointer;
-            text-decoration: none;
-            color: black;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-        .btn-deletar {
-            background-color: #ffcccc;
-            border-color: #ff0000;
-        }
-    </style>
 </head>
 <body>
     <?php require_once 'partials/header.php'; ?>
@@ -74,17 +52,29 @@ if (isset($_GET['acao']) && isset($_GET['id'])) {
                         <th>Investimento</th>
                         <th>Retorno</th>
                         <th>Id do Produto</th>
-                        <th>Ações</th> </tr>
+                        <th>Ações</th> 
+                    </tr>
                     <?php
-                    $total = 0;
-                    
-                    // Verifica se existem produtos antes de fazer o loop
+                    $total_retorno_geral = 0;
+                    $total_investimento_geral = 0; 
+                    $total_itens_estoque = 0;      
+
                     if (!empty($_SESSION['produtos'])) {
                         foreach($_SESSION['produtos'] as $produto){
-                            $totalLinha = $produto['preco'] * $produto['estoque'];
-                            $status_estoque = ''; // Inicializando a variável vazia
+                            
+                           
+                            $preco_limpo = str_replace(',', '.', $produto['preco']);
+                            $investimento_limpo = str_replace(',', '.', $produto['investimento']);
+                            
+                            
+                            $totalLinhaRetorno = (float)$preco_limpo * (int)$produto['estoque'];
+                            
+                           
+                            $total_investimento_geral += (float)$investimento_limpo;
+                            $total_itens_estoque += (int)$produto['estoque'];
+                            $total_retorno_geral += $totalLinhaRetorno;
 
-                            // Ajuste na lógica de status do estoque
+                            $status_estoque = ''; 
                             if ($produto['estoque'] < 10) {
                                 $status_estoque = 'alerta_severo_estoque';
                             } elseif ($produto['estoque'] < 30) {
@@ -93,44 +83,59 @@ if (isset($_GET['acao']) && isset($_GET['id'])) {
 
                             echo '<tr>  
                                     <td>'.$produto['nome'].'</td>
-                                    <td>R$'.$produto['preco'].'</td>
+                                    <td>R$ '.number_format((float)$preco_limpo, 2, ',', '.').'</td>
                                     <td>'.$produto['categoria'].'</td>
                                     <td class="'.$status_estoque.'">'.$produto['estoque'].'</td>
-                                    <td>R$'.$produto['investimento'].'</td>
-                                    <td>R$'.$totalLinha.'</td>
+                                    <td>R$ '.number_format((float)$investimento_limpo, 2, ',', '.').'</td>
+                                    <td>R$ '.number_format($totalLinhaRetorno, 2, ',', '.').'</td>
                                     <td>'.$produto['id'].'</td>
                                     <td>
-                                        <a href="?acao=adicionar&id='.$produto['id'].'" class="btn-acao">+</a>
-                                        <a href="?acao=remover&id='.$produto['id'].'" class="btn-acao">-</a>
-                                        <a href="?acao=deletar&id='.$produto['id'].'" class="btn-acao btn-deletar">Deletar</a>
+                                        <a href="?acao=adicionar&id='.$produto['id'].'" class="botao-acao-mais">➕</a>
+                                        <a href="?acao=remover&id='.$produto['id'].'" class="botao-acao-menos">➖</a>
+                                        <a href="?acao=deletar&id='.$produto['id'].'" class="botao-acao-deletar">🗑️</a>
                                     </td>
                             </tr>';
-                            $total += $totalLinha;
                         }
                     } else {
                         echo '<tr><td colspan="8">Nenhum produto cadastrado.</td></tr>';
                     }
                     ?>
                 </table>
-            </div> <div class="lucro-container">
-                <?php
-                    echo '<h1> Lucro total</h1>';
-                    $lucro_total = 0;   
-                    
-                    if (!empty($_SESSION['produtos'])) {
-                        // O seu código original somava a coluna 'retorno', mas a variável gerada no loop era $totalLinha
-                        // Assumindo que a chave 'retorno' exista no seu array base. Se não existir, mude para 'investimento' ou algo compatível.
-                        foreach(array_column($_SESSION['produtos'], 'retorno') as $valor) {
-                            $lucro_total += $valor;
-                        }
-                    }
-                    print 'R$ ' . $lucro_total;
-                ?>
             </div>
         </div>
     </main>
 
     <footer>
-        </footer>
+        <h1>Resumo do Estoque</h1>
+        <div class="footer-completo">
+            <div class="parte-footer">
+                <h3>Investimento Total</h3>
+                <p>R$ <?php echo number_format($total_investimento_geral, 2, ',', '.'); ?></p>
+            </div>
+
+            <div class="linha-footer"></div>
+
+            <div class="parte-footer">
+                <h3>Quantidade em Estoque</h3>
+                <p><?php echo $total_itens_estoque; ?> unidades</p>
+            </div>
+
+            <div class="linha-footer"></div>
+
+            <div class="parte-footer">   
+                <h3>Retorno Total Esperado</h3>
+                <p>R$ <?php echo number_format($total_retorno_geral, 2, ',', '.'); ?></p>
+            </div>
+
+            <div class="linha-footer"></div>
+
+            <div class="parte-footer-legenda">
+                <h3>Legenda</h3>
+                <p>⬛Preto: Estoque estável</p>
+                <p>🟨Amarelo: Estoque baixo</p>
+                <p>🟥Vermelho: Estoque quase inexistente</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
